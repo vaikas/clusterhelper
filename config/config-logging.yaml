@@ -16,7 +16,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: config-logging
-  namespace: knative-samples
+  namespace: default
   labels:
     samples.knative.dev/release: devel
 
@@ -63,4 +63,3 @@ data:
     # Log level overrides
     # Changes are be picked up immediately.
     loglevel.controller: "info"
-    loglevel.webhook: "info"
