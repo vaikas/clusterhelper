@@ -12,7 +12,7 @@ purpose built robot that handles a few things for you:
 
 1. Creates a `RoleBinding` for the default `Service Account` for the selected
    (more about that later).
-1. Copies the specified `Secret` to the `Namespace`
+1. Copies the specified `Secret` to the `Namespace`.
 1. Patches the above mentioned `Secret` to imagePullSecrets to `default`
    `Service Account`.
 
