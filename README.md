@@ -11,10 +11,10 @@ for each namespace. For example, laying out a sensible RoleBinding for the
 purpose built robot that handles a few things for you:
 
 1. Creates a `RoleBinding` for the default `Service Account` for the selected
-   (more about that later). 
-1. Copies the specified `Secret` to the `Namespace`
+   (more about that later).
+1. Copies the specified `Secret` to the `Namespace`.
 1. Patches the above mentioned `Secret` to imagePullSecrets to `default`
-   `Service Account` 
+   `Service Account`.
 
 So, the idea is that you'd run this Controller and specify the policy (which
 namespaces to inject), what to inject them with and hopefully your default
