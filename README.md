@@ -32,7 +32,9 @@ those up before creating the controller).
 1. CLUSTER_ROLE - Defines which cluster role to create a `Role Binding` for the
           default Service Account. For example, if there are `Pod Security
           Policies` that you'd like to have each default service account to
-          conform to, you could use it here.
+          conform to, you could use it here. Say you have a `Pod Security
+          Policy` called justanybody, you would set this value to:
+          'psp:justanybody'.
 1. SOURCE_SECRET_NAMESPACE - Defines which namespaces holds to `Image Pull
           Secret`s that should be used. If you're using a private registry, you
           could stash those creds into a single namespace and distribute them
