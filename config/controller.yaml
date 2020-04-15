@@ -65,11 +65,11 @@ spec:
         - name: METRICS_DOMAIN
           value: knative.dev/samples
         - name: CLUSTER_ROLE
-          value: <FILL IN WITH CLUSTERROLE TO APPLY>
+          value: # <FILL IN WITH CLUSTERROLE TO APPLY>
         - name: SOURCE_SECRET_NAMESPACE
-          value: <WHICH NAMESPACE TO GET THE SECRET FROM>
+          value: # <WHICH NAMESPACE TO GET THE SECRET FROM>
         - name: SOURCE_SECRET_NAME
-          value: <NAME OF THE SECRET>
+          value: #<NAME OF THE SECRET>
         # Controls whether by default we inject secrets to all the namespaces
         - name: INJECTION_DEFAULT
           value: "false"

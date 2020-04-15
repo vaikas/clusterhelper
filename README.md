@@ -27,7 +27,11 @@ is what I ended up doing.
 
 In the config/controller.yaml file there are 4 environment flags you want to
 configure before firing things up (since they are env variables, you should set
-those up before creating the controller).
+those up before creating the controller). Note that if you leave out for example
+CLUSTER_ROLE as empty, that's fine, it just means that the Role Binding won't
+get created, and if you leave SOURCE* fields empty, then the Image Pull Secrets
+won't created.
+
 
 1. CLUSTER_ROLE - Defines which cluster role to create a `Role Binding` for the
           default Service Account. For example, if there are `Pod Security

@@ -80,16 +80,21 @@ func (r *Reconciler) ReconcileKind(ctx context.Context, ns *corev1.Namespace) pk
 		return nil
 	}
 
-	if err := r.reconcileRoleBinding(ctx, ns.Name); err != nil {
-		return err
+	// Only create this if clusterRole has been specified
+	if r.clusterRole != "" {
+		if err := r.reconcileRoleBinding(ctx, ns.Name); err != nil {
+			return err
+		}
 	}
 
-	if err := r.reconcileSecret(ctx, ns.Name); err != nil {
-		return err
-	}
+	if r.sourceSecretNamespace != "" && r.sourceSecretName != "" {
+		if err := r.reconcileSecret(ctx, ns.Name); err != nil {
+			return err
+		}
 
-	if err := r.reconcileServiceAccount(ctx, ns.Name); err != nil {
-		return err
+		if err := r.reconcileServiceAccount(ctx, ns.Name); err != nil {
+			return err
+		}
 	}
 
 	return newReconciledNormal(ns.Namespace, ns.Name)
