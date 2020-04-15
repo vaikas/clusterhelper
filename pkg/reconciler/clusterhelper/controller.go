@@ -52,9 +52,9 @@ const (
 
 type envConfig struct {
 	InjectionDefault      bool   `envconfig:"CLUSTER_HELPER_INJECTION_DEFAULT" default:"true"`
-	ClusterRole           string `envconfig:"CLUSTER_ROLE" required:"true"`
-	SourceSecretNamespace string `envconfig:"SOURCE_SECRET_NAMESPACE" required:"true"`
-	SourceSecretName      string `envconfig:"SOURCE_SECRET_NAME" required:"true"`
+	ClusterRole           string `envconfig:"CLUSTER_ROLE"`
+	SourceSecretNamespace string `envconfig:"SOURCE_SECRET_NAMESPACE"`
+	SourceSecretName      string `envconfig:"SOURCE_SECRET_NAME"`
 }
 
 func onByDefault(labels map[string]string) bool {
